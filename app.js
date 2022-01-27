@@ -1,17 +1,51 @@
 function computerPlay(){
-    let computerChoice = Math.floor(Math.random() * 3 + 1);
-    let computerHand;
-    switch(computerChoice){
+    let randomChoice = Math.floor(Math.random() * 3 + 1);
+    let computerChoice;
+    switch(randomChoice){
         case 2:
-            computerHand  = "Paper";
+            computerChoice  = "Paper";
             break;
         case 3:
-            computerHand = "Scissors";
+            computerChoice = "Scissors";
             break;
         default:
-            computerHand = "Rock";         
+            computerChoice = "Rock";         
     }
-    return computerHand;
+    return computerChoice;
 }
 
-computerPlay();
+function playRound(playerSelection, computerSelection){
+    let roundWinnerMessage;
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+    if(playerSelection === computerSelection){
+        roundWinnerMessage = `Tie game! You both play ${playerSelection}`;
+    } else if(playerSelection === "paper"){
+        if(computerSelection === "rock"){
+            roundWinnerMessage = `Computer lose! ${playerSelection} beats ${computerSelection}`;
+        } else {
+            roundWinnerMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
+        }
+    }else if(playerSelection === "scissors"){
+        if(computerSelection === "paper"){
+            roundWinnerMessage = `Computer lose! ${playerSelection} beats ${computerSelection}`;
+        } else {
+            roundWinnerMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
+        }    
+    } else if(playerSelection === "rock"){
+        if(computerSelection === "scissors"){
+            roundWinnerMessage = `Computer lose! ${playerSelection} beats ${computerSelection}`;
+        } else {
+            roundWinnerMessage = `You lose! ${computerSelection} beats ${playerSelection}`;
+        }
+        
+    }
+    return roundWinnerMessage;
+
+}
+
+const player = "paPEr";
+const computer = computerPlay();
+
+console.log(playRound(player,computer), `computer choice: ${computer}, player choice ${player}`);
+
