@@ -1,3 +1,9 @@
+const btns = document.querySelectorAll('.btn');
+btns.forEach(btn => btn.addEventListener("click", function(e){
+    console.log( playRound(this.id, computerPlay()) );
+    
+}))
+/* the logic of the game */
 let computerWins = 0;
 let playerWins = 0;
 
@@ -56,20 +62,20 @@ function playRound(playerSelection, computerSelection){
 
 
 
-function game(){
-    let round = 0;
-    while(round < 5){
-        let playerChoice = prompt("choose a hand");
-        let computerChoice = computerPlay();
-        playRound(playerChoice, computerChoice);
-        round++;
-    }
-    if(computerWins > playerWins){
-        return "computer wins!";
+// function game(){
+//     let round = 0;
+//     while(round < 5){
+//         let playerChoice = prompt("choose a hand");
+//         let computerChoice = computerPlay();
+//         playRound(playerChoice, computerChoice);
+//         round++;
+//     }
+//     if(computerWins > playerWins){
+//         return "computer wins!";
         
-    } else {
-        return "Player wins!";
-    }
-}
+//     } else {
+//         return "Player wins!";
+//     }
+// }
 
-console.log(game() );
+// console.log(game() );
