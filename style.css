@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    position: relative;
+    
+}
+
+main {
+    width: 80%;
+    height: 100vh;
+    background-color: #222;
+}
+
+main h1 {
+    text-align: center;
+    margin-top: 100px;
+    color: whitesmoke;
+}
+main h2 {
+    text-align: center;
+    color: #EEE;
+    font-size: 1.4rem;
+    margin-top: 30px;
+}
+
+.buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.buttons button{
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 8px 12px;
+    width: 120px;
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    color: #dee;
+    background-color: goldenrod;
+    transition: .5s;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background-color: rgb(238, 177, 24);
+    transform: scale(1.1);
+}
+
+.choices {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#displayResult {
+    font-size: 1.3rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+aside {
+    width: 20%;
+    height: 100vh;
+    background-color: lightslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+div p {
+    margin: 20px 0px;
+}
+
+aside div p {
+    font-size: 1.6rem;
+    color: whitesmoke;
+
+}
+
+
+
+.announceWinner {
+    
+    border-radius: 10px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.announceWinner button {
+    outline: none;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    color: #dee;
+    background-color: goldenrod;
+    padding: 8px 12px;
+    margin: 12px;
+}
+
+.announceWinner button:hover {
+    background-color: rgb(238, 177, 24);
+    transform: scale(1.1);
+}
