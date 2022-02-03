@@ -2,7 +2,8 @@ const btns = document.querySelectorAll('.btn');
 const playerChoice = document.querySelector(".playerChoice img");
 const computerChoice = document.querySelector(".computerChoice img");
 const displayResult = document.getElementById('displayResult');
-const announceWinner = document.querySelector('.annouceWinner');
+
+const announceWinner = document.querySelector('.announceWinner');
 const finalWinner = document.getElementById('displayWinner');
 const playAgain = document.querySelector('#reloadGame');
 
@@ -13,6 +14,7 @@ let computerScore = document.getElementById('computerScore');
 
 let computerWins = 0;
 let playerWins = 0;
+let playGame = true;
 
 
 
@@ -21,17 +23,37 @@ let playerWins = 0;
 
 
 btns.forEach(btn => btn.addEventListener("click", function(e){
+   if(playGame){
     let computer = computerPlay();
     playRound(this.id, computer);
     displayImg(this.id, playerChoice);
     displayImg(computer, computerChoice);
     playerScore.textContent = playerWins;
     computerScore.textContent = computerWins;
-
-    
-    
+    if(playerWins === 5 || computerWins === 5){
+        playGame = false;
+        displayWinner(playerWins, computerWins);
+        playAgain.addEventListener("click", function(){
+            window.location.reload(true);
+        });
+    }
+   }
+        
+   
  }));
-/* the logic of the game */
+
+
+function displayWinner(player, computer){
+    if(player === 5){
+        finalWinner.textContent = `You've beat the shit out of the computer, congratulation!`
+        announceWinner.style.display = "block";;
+    } else if(computer === 5){
+        finalWinner.textContent = `the computer is savage, he just beat you in the proper way`
+        announceWinner.style.display = "block"
+    }
+}
+
+
 
 
 function displayImg(choice,player){
@@ -93,20 +115,3 @@ function playRound(playerSelection, computerSelection){
 
 
 
-// function game(){
-//     let round = 0;
-//     while(round < 5){
-//         let playerChoice = prompt("choose a hand");
-//         let computerChoice = computerPlay();
-//         playRound(playerChoice, computerChoice);
-//         round++;
-//     }
-//     if(computerWins > playerWins){
-//         return "computer wins!";
-        
-//     } else {
-//         return "Player wins!";
-//     }
-// }
-
-// console.log(game() );

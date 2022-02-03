@@ -68,7 +68,7 @@ main h2 {
 aside {
     width: 20%;
     height: 100vh;
-    background-color: lightslategrey;
+    background: linear-gradient(to top right, #222, goldenrod);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +89,7 @@ aside div p {
 
 
 .announceWinner {
-    
+    display: none;
     border-radius: 10px;
     text-align: center;
     color: whitesmoke;
@@ -110,3 +110,4 @@ aside div p {
     background-color: rgb(238, 177, 24);
     transform: scale(1.1);
 }
+
